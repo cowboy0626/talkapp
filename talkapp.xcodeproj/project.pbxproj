@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B0BD99A213444040010CE6A /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0BD999213444040010CE6A /* ChatVC.swift */; };
+		0B0BD99C2134497C0010CE6A /* ChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0BD99B2134497C0010CE6A /* ChatModel.swift */; };
 		0B2EBB1F210D717E00C4E411 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2EBB1E210D717E00C4E411 /* AppDelegate.swift */; };
 		0B2EBB21210D717E00C4E411 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2EBB20210D717E00C4E411 /* ViewController.swift */; };
 		0B2EBB24210D717E00C4E411 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B2EBB22210D717E00C4E411 /* Main.storyboard */; };
@@ -14,6 +16,15 @@
 		0B2EBB29210D717F00C4E411 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B2EBB27210D717F00C4E411 /* LaunchScreen.storyboard */; };
 		0B2EBB34210D717F00C4E411 /* talkappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2EBB33210D717F00C4E411 /* talkappTests.swift */; };
 		0B2EBB3F210D717F00C4E411 /* talkappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2EBB3E210D717F00C4E411 /* talkappUITests.swift */; };
+		0B2EBB4D210D741C00C4E411 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B2EBB4C210D741C00C4E411 /* GoogleService-Info.plist */; };
+		0B3872992119FA2200B7B9AA /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B3872982119FA2200B7B9AA /* RemoteConfigDefaults.plist */; };
+		0B38729B211A047000B7B9AA /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B38729A211A047000B7B9AA /* LoginVC.swift */; };
+		0B67F5D8211B20E10072275F /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B67F5D7211B20E00072275F /* SignupVC.swift */; };
+		0B709A0B2130D56800F3A837 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B709A0A2130D56800F3A837 /* UserModel.swift */; };
+		0B709A0D2131131200F3A837 /* PeopleListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B709A0C2131131200F3A837 /* PeopleListVC.swift */; };
+		5504CED9DFE3A1A43E16BDD7 /* Pods_talkapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E4A8BFD187E56B63B40DCE /* Pods_talkapp.framework */; };
+		849A829C0D789896CA1655F5 /* Pods_talkappUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98946F597C93D0A68AE9D27C /* Pods_talkappUITests.framework */; };
+		C8267B994671392C60F77B6C /* Pods_talkappTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E70FBD0A3B2F41DAD7064356 /* Pods_talkappTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B0BD999213444040010CE6A /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		0B0BD99B2134497C0010CE6A /* ChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatModel.swift; sourceTree = "<group>"; };
 		0B2EBB1B210D717E00C4E411 /* talkapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = talkapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B2EBB1E210D717E00C4E411 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B2EBB20210D717E00C4E411 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +60,21 @@
 		0B2EBB3A210D717F00C4E411 /* talkappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = talkappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B2EBB3E210D717F00C4E411 /* talkappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = talkappUITests.swift; sourceTree = "<group>"; };
 		0B2EBB40210D717F00C4E411 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B2EBB4C210D741C00C4E411 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0B3872982119FA2200B7B9AA /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
+		0B38729A211A047000B7B9AA /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		0B67F5D7211B20E00072275F /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		0B709A0A2130D56800F3A837 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		0B709A0C2131131200F3A837 /* PeopleListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListVC.swift; sourceTree = "<group>"; };
+		21E45E1270F574E9AB378B89 /* Pods-talkappUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkappUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-talkappUITests/Pods-talkappUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4437536C5AFFAE0291380A79 /* Pods-talkappTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkappTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-talkappTests/Pods-talkappTests.debug.xcconfig"; sourceTree = "<group>"; };
+		825B3C419D9B6CFAE1399EB4 /* Pods-talkappUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkappUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-talkappUITests/Pods-talkappUITests.release.xcconfig"; sourceTree = "<group>"; };
+		89426E70960842E83CC48EB4 /* Pods-talkappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkappTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-talkappTests/Pods-talkappTests.release.xcconfig"; sourceTree = "<group>"; };
+		98946F597C93D0A68AE9D27C /* Pods_talkappUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talkappUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0267946CC382DC1950646B2 /* Pods-talkapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-talkapp/Pods-talkapp.release.xcconfig"; sourceTree = "<group>"; };
+		B1E4A8BFD187E56B63B40DCE /* Pods_talkapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talkapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E70FBD0A3B2F41DAD7064356 /* Pods_talkappTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_talkappTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF08D3A5896DAB6D2A22A5CE /* Pods-talkapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-talkapp/Pods-talkapp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5504CED9DFE3A1A43E16BDD7 /* Pods_talkapp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8267B994671392C60F77B6C /* Pods_talkappTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849A829C0D789896CA1655F5 /* Pods_talkappUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +112,8 @@
 				0B2EBB32210D717F00C4E411 /* talkappTests */,
 				0B2EBB3D210D717F00C4E411 /* talkappUITests */,
 				0B2EBB1C210D717E00C4E411 /* Products */,
+				1167832E3B3A13270D8047CF /* Pods */,
+				0D076D63E583B76810988DC9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,10 +132,14 @@
 			children = (
 				0B2EBB1E210D717E00C4E411 /* AppDelegate.swift */,
 				0B2EBB20210D717E00C4E411 /* ViewController.swift */,
+				0B709A092130D51800F3A837 /* Model */,
+				0B709A062130C96600F3A837 /* Controller */,
 				0B2EBB22210D717E00C4E411 /* Main.storyboard */,
 				0B2EBB25210D717F00C4E411 /* Assets.xcassets */,
 				0B2EBB27210D717F00C4E411 /* LaunchScreen.storyboard */,
 				0B2EBB2A210D717F00C4E411 /* Info.plist */,
+				0B2EBB4C210D741C00C4E411 /* GoogleService-Info.plist */,
+				0B3872982119FA2200B7B9AA /* RemoteConfigDefaults.plist */,
 			);
 			path = talkapp;
 			sourceTree = "<group>";
@@ -125,6 +162,49 @@
 			path = talkappUITests;
 			sourceTree = "<group>";
 		};
+		0B709A062130C96600F3A837 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0B67F5D7211B20E00072275F /* SignupVC.swift */,
+				0B0BD999213444040010CE6A /* ChatVC.swift */,
+				0B38729A211A047000B7B9AA /* LoginVC.swift */,
+				0B709A0C2131131200F3A837 /* PeopleListVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0B709A092130D51800F3A837 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0B709A0A2130D56800F3A837 /* UserModel.swift */,
+				0B0BD99B2134497C0010CE6A /* ChatModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0D076D63E583B76810988DC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B1E4A8BFD187E56B63B40DCE /* Pods_talkapp.framework */,
+				E70FBD0A3B2F41DAD7064356 /* Pods_talkappTests.framework */,
+				98946F597C93D0A68AE9D27C /* Pods_talkappUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1167832E3B3A13270D8047CF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FF08D3A5896DAB6D2A22A5CE /* Pods-talkapp.debug.xcconfig */,
+				A0267946CC382DC1950646B2 /* Pods-talkapp.release.xcconfig */,
+				4437536C5AFFAE0291380A79 /* Pods-talkappTests.debug.xcconfig */,
+				89426E70960842E83CC48EB4 /* Pods-talkappTests.release.xcconfig */,
+				21E45E1270F574E9AB378B89 /* Pods-talkappUITests.debug.xcconfig */,
+				825B3C419D9B6CFAE1399EB4 /* Pods-talkappUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +212,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B2EBB43210D717F00C4E411 /* Build configuration list for PBXNativeTarget "talkapp" */;
 			buildPhases = (
+				6713C619A930E760EE4DF60C /* [CP] Check Pods Manifest.lock */,
 				0B2EBB17210D717E00C4E411 /* Sources */,
 				0B2EBB18210D717E00C4E411 /* Frameworks */,
 				0B2EBB19210D717E00C4E411 /* Resources */,
+				D66AA5CFE886E7279499C788 /* [CP] Embed Pods Frameworks */,
+				7E05B3A261EA72DEB1C0269D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +232,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B2EBB46210D717F00C4E411 /* Build configuration list for PBXNativeTarget "talkappTests" */;
 			buildPhases = (
+				9C4D70643E296FCC77EA88F0 /* [CP] Check Pods Manifest.lock */,
 				0B2EBB2B210D717F00C4E411 /* Sources */,
 				0B2EBB2C210D717F00C4E411 /* Frameworks */,
 				0B2EBB2D210D717F00C4E411 /* Resources */,
+				58385F2908C11E8F38AED0B9 /* [CP] Embed Pods Frameworks */,
+				2070F2BAE166107120AD4890 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +253,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0B2EBB49210D717F00C4E411 /* Build configuration list for PBXNativeTarget "talkappUITests" */;
 			buildPhases = (
+				FB88FFD839F0762C240685A8 /* [CP] Check Pods Manifest.lock */,
 				0B2EBB36210D717F00C4E411 /* Sources */,
 				0B2EBB37210D717F00C4E411 /* Frameworks */,
 				0B2EBB38210D717F00C4E411 /* Resources */,
+				63BEDE1860FD37E4664D8195 /* [CP] Embed Pods Frameworks */,
+				065B1CDDAD5943C5FFE26F5C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -230,6 +319,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B2EBB29210D717F00C4E411 /* LaunchScreen.storyboard in Resources */,
+				0B3872992119FA2200B7B9AA /* RemoteConfigDefaults.plist in Resources */,
+				0B2EBB4D210D741C00C4E411 /* GoogleService-Info.plist in Resources */,
 				0B2EBB26210D717F00C4E411 /* Assets.xcassets in Resources */,
 				0B2EBB24210D717E00C4E411 /* Main.storyboard in Resources */,
 			);
@@ -251,13 +342,183 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		065B1CDDAD5943C5FFE26F5C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-talkappUITests/Pods-talkappUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2070F2BAE166107120AD4890 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-talkappTests/Pods-talkappTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58385F2908C11E8F38AED0B9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-talkappTests/Pods-talkappTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63BEDE1860FD37E4664D8195 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-talkappUITests/Pods-talkappUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6713C619A930E760EE4DF60C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-talkapp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7E05B3A261EA72DEB1C0269D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-talkapp/Pods-talkapp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C4D70643E296FCC77EA88F0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-talkappTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D66AA5CFE886E7279499C788 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-talkapp/Pods-talkapp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-talkapp/Pods-talkapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB88FFD839F0762C240685A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-talkappUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0B2EBB17210D717E00C4E411 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B67F5D8211B20E10072275F /* SignupVC.swift in Sources */,
+				0B0BD99A213444040010CE6A /* ChatVC.swift in Sources */,
 				0B2EBB21210D717E00C4E411 /* ViewController.swift in Sources */,
+				0B0BD99C2134497C0010CE6A /* ChatModel.swift in Sources */,
 				0B2EBB1F210D717E00C4E411 /* AppDelegate.swift in Sources */,
+				0B709A0B2130D56800F3A837 /* UserModel.swift in Sources */,
+				0B38729B211A047000B7B9AA /* LoginVC.swift in Sources */,
+				0B709A0D2131131200F3A837 /* PeopleListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,15 +689,13 @@
 		};
 		0B2EBB44210D717F00C4E411 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF08D3A5896DAB6D2A22A5CE /* Pods-talkapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J82B469879;
 				INFOPLIST_FILE = talkapp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.cookieapps.talkapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -446,15 +705,13 @@
 		};
 		0B2EBB45210D717F00C4E411 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0267946CC382DC1950646B2 /* Pods-talkapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J82B469879;
 				INFOPLIST_FILE = talkapp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.cookieapps.talkapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -464,17 +721,14 @@
 		};
 		0B2EBB47210D717F00C4E411 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4437536C5AFFAE0291380A79 /* Pods-talkappTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J82B469879;
 				INFOPLIST_FILE = talkappTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.cookieapps.talkappTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -485,17 +739,14 @@
 		};
 		0B2EBB48210D717F00C4E411 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89426E70960842E83CC48EB4 /* Pods-talkappTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J82B469879;
 				INFOPLIST_FILE = talkappTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.cookieapps.talkappTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -506,16 +757,13 @@
 		};
 		0B2EBB4A210D717F00C4E411 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21E45E1270F574E9AB378B89 /* Pods-talkappUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J82B469879;
 				INFOPLIST_FILE = talkappUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.cookieapps.talkappUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -526,16 +774,13 @@
 		};
 		0B2EBB4B210D717F00C4E411 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 825B3C419D9B6CFAE1399EB4 /* Pods-talkappUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J82B469879;
 				INFOPLIST_FILE = talkappUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kr.cookieapps.talkappUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
