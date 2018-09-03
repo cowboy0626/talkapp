@@ -87,7 +87,8 @@ class PeopleListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             maker.left.equalTo(cell).offset(10) // margin 10
             maker.height.width.equalTo(50)
         }
-        URLSession.shared.dataTask(with: URL(string: friendsArray[indexPath.row].profileImageUrl!)!) { (data, response, error) in
+        let url = URL(string: friendsArray[indexPath.row].profileImageUrl!)
+        URLSession.shared.dataTask(with: url!) { (data, res, err) in
             DispatchQueue.main.async {
                 profileImageView.image = UIImage(data: data!)
                 profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2

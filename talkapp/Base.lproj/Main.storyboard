@@ -298,8 +298,8 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="chatRoomNameLabel" destination="C6f-Pu-sIh" id="v2G-Bj-hmU"/>
-                                            <outlet property="imageView" destination="RI9-hz-Y91" id="jWp-OP-z7V"/>
                                             <outlet property="lastMessageLabel" destination="pR9-vq-6Mu" id="u4B-G2-PNb"/>
+                                            <outlet property="profileImageView" destination="RI9-hz-Y91" id="hh7-2I-bGJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

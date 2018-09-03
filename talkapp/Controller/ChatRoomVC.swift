@@ -33,9 +33,16 @@ class ChatRoomVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Dispose of any resources that can be recreated.
     }
     
+    // 탭바 이동 시 데이터 갱신내용이 그대로 잘 반영되도록 하기
+    override func viewDidAppear(_ animated: Bool) {
+        viewDidLoad()
+    }
+    
     // 내가 포함된 채팅룸 가져오기 (chatrooms 안에 내 아이디가 있는 것이 있는 것 찾아오기)
     func getChatRoomList(){
         Database.database().reference().child("chatrooms").queryOrdered(byChild: "users/"+uid).queryEqual(toValue: true).observeSingleEvent(of: DataEventType.value) { (dataSnapshot) in
+            // 초기화
+            self.chatRooms.removeAll()
             for item in dataSnapshot.children.allObjects as! [DataSnapshot] {
                 
                 if let chatRoomDic = item.value as? [String:AnyObject]{
@@ -72,7 +79,9 @@ class ChatRoomVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let url = URL(string: userModel.profileImageUrl!)
             URLSession.shared.dataTask(with: url!, completionHandler: { (data, res, err) in
                 DispatchQueue.main.async {
-//                    cell.profileImageView.image = UIImage(data: data!)
+                    cell.profileImageView.image = UIImage(data: data!)
+                    cell.profileImageView.layer.cornerRadius = (cell.profileImageView?.frame.width)! / 2
+                    cell.profileImageView.layer.masksToBounds = true
                 }
             }).resume()
             
