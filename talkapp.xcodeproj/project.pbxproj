@@ -19,6 +19,7 @@
 		0B2EBB4D210D741C00C4E411 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B2EBB4C210D741C00C4E411 /* GoogleService-Info.plist */; };
 		0B3872992119FA2200B7B9AA /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B3872982119FA2200B7B9AA /* RemoteConfigDefaults.plist */; };
 		0B38729B211A047000B7B9AA /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B38729A211A047000B7B9AA /* LoginVC.swift */; };
+		0B39E921213D7EC1001B7C34 /* ChatRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B39E920213D7EC1001B7C34 /* ChatRoomVC.swift */; };
 		0B67F5D8211B20E10072275F /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B67F5D7211B20E00072275F /* SignupVC.swift */; };
 		0B709A0B2130D56800F3A837 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B709A0A2130D56800F3A837 /* UserModel.swift */; };
 		0B709A0D2131131200F3A837 /* PeopleListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B709A0C2131131200F3A837 /* PeopleListVC.swift */; };
@@ -63,6 +64,7 @@
 		0B2EBB4C210D741C00C4E411 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0B3872982119FA2200B7B9AA /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		0B38729A211A047000B7B9AA /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		0B39E920213D7EC1001B7C34 /* ChatRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomVC.swift; sourceTree = "<group>"; };
 		0B67F5D7211B20E00072275F /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		0B709A0A2130D56800F3A837 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0B709A0C2131131200F3A837 /* PeopleListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListVC.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				0B0BD999213444040010CE6A /* ChatVC.swift */,
 				0B38729A211A047000B7B9AA /* LoginVC.swift */,
 				0B709A0C2131131200F3A837 /* PeopleListVC.swift */,
+				0B39E920213D7EC1001B7C34 /* ChatRoomVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				0B2EBB1F210D717E00C4E411 /* AppDelegate.swift in Sources */,
 				0B709A0B2130D56800F3A837 /* UserModel.swift in Sources */,
 				0B38729B211A047000B7B9AA /* LoginVC.swift in Sources */,
+				0B39E921213D7EC1001B7C34 /* ChatRoomVC.swift in Sources */,
 				0B709A0D2131131200F3A837 /* PeopleListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -695,7 +699,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J82B469879;
 				INFOPLIST_FILE = talkapp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.cookieapps.talkapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -711,7 +718,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J82B469879;
 				INFOPLIST_FILE = talkapp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.cookieapps.talkapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -728,7 +738,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J82B469879;
 				INFOPLIST_FILE = talkappTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.cookieapps.talkappTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -746,7 +760,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J82B469879;
 				INFOPLIST_FILE = talkappTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.cookieapps.talkappTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -763,7 +781,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J82B469879;
 				INFOPLIST_FILE = talkappUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.cookieapps.talkappUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -780,7 +802,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J82B469879;
 				INFOPLIST_FILE = talkappUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.cookieapps.talkappUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

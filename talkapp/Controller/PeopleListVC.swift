@@ -93,7 +93,7 @@ class PeopleListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
                 profileImageView.clipsToBounds = true
             }
-            }.resume()
+        }.resume()
         
         // 성명 레이블 구성
         let nameLabel = cell.userNameLabel!

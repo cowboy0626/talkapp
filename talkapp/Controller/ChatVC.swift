@@ -15,6 +15,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var messageTableView: UITableView!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     // Variables
     var uid: String?
@@ -34,6 +35,28 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
         // 전송버튼에 createRoom 이벤트핸들러 연결하기
         sendButton.addTarget(self, action: #selector(createRoomOrSendMessage), for: .touchUpInside)
+        
+        // 탭바 숨기기
+        self.tabBarController?.tabBar.isHidden = true
+        
+        // 다른곳 누르면 키보드 숨기기 처리
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        // 옵저버 삭제처리
+        NotificationCenter.default.removeObserver(self)
+        // 탭바 보이기
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+    // 키보드 통제옵저버
+    override func viewWillAppear(_ animated: Bool) {
+        // 키보드 나타날때 확인하는 로직
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
+        // 키보드 사라질 때 확인하는 로직
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,7 +96,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             // 코멘트데이터 추가
             Database.database().reference().child("chatrooms").child(chatRoomId!).child("comments").childByAutoId().setValue(message) { (err, ref) in
                 if(err == nil){
-                    self.afterMessageSent()
+                    self.inputTextField.text = ""
                 }
             }
         }
@@ -122,6 +145,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                 self.comments.append(comment!)
             }
             self.messageTableView.reloadData()
+            self.scrollMessage()
         }
     }
     
@@ -163,6 +187,36 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // 메시지 입력후 처리로직
     func afterMessageSent(){
         self.inputTextField.text = ""
+    }
+    
+    // 키보드 보이기 처리
+    @objc func keyboardWillShow(notification: Notification) {
+        if let keyboardSize = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            self.bottomConstraint.constant = keyboardSize.height
+        }
+        
+        UIView.animate(withDuration: 0, animations: {
+            self.view.layoutIfNeeded()
+        }) { (complete) in
+            self.scrollMessage()
+        }
+    }
+    // 키보드 숨기기 처리
+    @objc func keyboardWillHide(notification: Notification){
+        self.bottomConstraint.constant = 20
+        self.view.layoutIfNeeded()
+    }
+    
+    // 키보드 숨기기 처리
+    @objc func dismissKeyboard(){
+        self.view.endEditing(true)
+    }
+    
+    // 페이지 사이즈에 맞게 스크롤하기
+    func scrollMessage(){
+        if self.comments.count > 0 {
+            self.messageTableView.scrollToRow(at: IndexPath(item: self.comments.count - 1, section: 0), at: UITableViewScrollPosition.bottom, animated: true)
+        }
     }
     
 }
