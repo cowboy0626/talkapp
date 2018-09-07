@@ -16,6 +16,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     // 원격에서 스타일가져오기
     let remoteConfig = RemoteConfig.remoteConfig()
@@ -51,11 +52,42 @@ class LoginVC: UIViewController {
         // 로그인 후 다음화면으로 연결하기
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if(user != nil){
+                // 토큰등록
+                let uid = Auth.auth().currentUser?.uid
+                let pushToken = InstanceID.instanceID().token()
+                Database.database().reference().child("users/"+uid!).updateChildValues(["pushToken": pushToken])
+                
+                // 화면이동
                 let view = self.storyboard?.instantiateViewController(withIdentifier: "MainTBC") as! UITabBarController
                 self.present(view, animated: true, completion: nil)
             }
         }
+        
+        // 다른 곳 누르면 키보드 숨기기 처리
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
+        
     }
+    
+    // 키보드 위치조정 처리 (viewWillAppear, viewWillDisappear 프로토콜 활용)
+    override func viewWillAppear(_ animated: Bool) {
+        // 키보드 통제 옵저버 생성
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        // 키보드 옵저버 삭제처리
+        NotificationCenter.default.removeObserver(self)
+    }
+    @objc func keyboardWillShow(notification: Notification){
+        if let keyboardSize = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            self.bottomConstraint.constant = keyboardSize.height + 16
+        }
+    }
+    @objc func keyboardWillHide(notification: Notification){
+        self.bottomConstraint.constant = 103
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -85,6 +117,11 @@ class LoginVC: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
+    }
+    
+    // 키보드 숨기기 처리
+    @objc func dismissKeyboard(){
+        self.view.endEditing(true)
     }
 
 

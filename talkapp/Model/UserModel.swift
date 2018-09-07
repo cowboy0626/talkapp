@@ -14,6 +14,9 @@ class UserModel: NSObject {
     // 딕셔너리 형태로 모델 정의
     var profileImageUrl: String?
     var userName: String?
-    var uid: String? 
+    var uid: String?
+    
+    // Push서비스관련
+    var pushToken: String? 
 
 }

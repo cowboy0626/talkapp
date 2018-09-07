@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+import Alamofire
+import Kingfisher
 
 class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -90,17 +92,44 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         } else {
             let message: Dictionary<String,Any> = [
                 "uid": uid!,
-                "message": self.inputTextField.text!
+                "message": self.inputTextField.text!,
+                "time-stamp": ServerValue.timestamp()
             ]
             
             // 코멘트데이터 추가
             Database.database().reference().child("chatrooms").child(chatRoomId!).child("comments").childByAutoId().setValue(message) { (err, ref) in
                 if(err == nil){
+                    self.sendGcm()
                     self.inputTextField.text = ""
                 }
             }
         }
         
+    }
+    
+    // 포스트메시지 보내기
+    func sendGcm(){
+        let url = "https://gcm-http.googleapis.com/gcm/send"
+        let header: HTTPHeaders = [
+            "Content-Type":"application/json",
+            "Authorization":"key=AIzaSyCU9-duqW4ytu6IYxpBQQXXPjvutp5eAX4"
+        ]
+        
+        // 현재사용자 이름 받아오기
+        let userName = Auth.auth().currentUser?.displayName
+        
+        var notificationModel = NotificationModel()
+        notificationModel.to = targetModel?.pushToken
+        notificationModel.notification.title = userName
+        notificationModel.notification.text = inputTextField.text
+        // foreground push를 보내기 위한 데이터
+        notificationModel.data.title = userName
+        notificationModel.data.text = inputTextField.text
+        
+        let params = notificationModel.toJSON()
+        Alamofire.request(url, method: .post, parameters: params, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
+            print(response.result.value)
+        }
     }
     
     // 채팅룸 중복체크하기 (유저이름으로 로그인해서 해당 유저의 이름으로 
@@ -160,22 +189,28 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let cell = messageTableView.dequeueReusableCell(withIdentifier: "MyMessageCell", for: indexPath) as! MyMessageCell
             cell.messageLabel?.text = self.comments[indexPath.row].message
             cell.messageLabel.numberOfLines = 0 // 여러줄이 나오도록
+            if let regTime = self.comments[indexPath.row].timeStamp {
+                cell.timeStampLabel.text = regTime.todayTime
+            }
             return cell
         } else {
             let cell = messageTableView.dequeueReusableCell(withIdentifier: "TargetMessageCell", for: indexPath) as! TargetMessageCell
+            
+            
             // 프로필이미지 표시
             let profileImageUrl = URL(string: (self.targetModel?.profileImageUrl)!)
-            URLSession.shared.dataTask(with: profileImageUrl!) { (data, res, err) in
-                DispatchQueue.main.async {
-                    cell.profileImageView.image = UIImage(data: data!)
-                    cell.profileImageView.layer.cornerRadius = cell.profileImageView.frame.width/2 // 원형처리
-                    cell.profileImageView.clipsToBounds = true // 이미지 크기 사이즈에 맞게 들어가게
-                }
-            }.resume()
+            // 프로필 이미지 동그랗게 만들기
+            cell.profileImageView.layer.cornerRadius = 50 / 2 // 원형처리
+            cell.profileImageView.clipsToBounds = true // 이미지 크기 사이즈에 맞게 들어가게
+            cell.profileImageView.kf.setImage(with: profileImageUrl)
+
     
             cell.userNameLabel.text = self.targetModel?.userName
             cell.messageLabel.text = self.comments[indexPath.row].message
             cell.messageLabel.numberOfLines = 0
+            if let regTime = self.comments[indexPath.row].timeStamp {
+                cell.timeStampLabel.text = regTime.todayTime
+            }
             return cell
         }
     }
@@ -192,7 +227,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // 키보드 보이기 처리
     @objc func keyboardWillShow(notification: Notification) {
         if let keyboardSize = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            self.bottomConstraint.constant = keyboardSize.height
+            self.bottomConstraint.constant = keyboardSize.height + 16
         }
         
         UIView.animate(withDuration: 0, animations: {
@@ -221,8 +256,20 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
 }
 
+// 작성시간 처리를 위해 Int 확장
+extension Int {
+    var todayTime: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "yyyy-mm-dd HH:mm"
+        let date = Date(timeIntervalSince1970: Double(self) / 1000)
+        return dateFormatter.string(from: date)
+    }
+}
+
 class MyMessageCell: UITableViewCell {
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var timeStampLabel: UILabel!
     
 }
 
@@ -230,5 +277,6 @@ class TargetMessageCell: UITableViewCell{
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var timeStampLabel: UILabel!
     
 }

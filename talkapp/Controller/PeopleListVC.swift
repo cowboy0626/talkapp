@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import Firebase
+import Kingfisher
 
 class PeopleListVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -88,13 +89,9 @@ class PeopleListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             maker.height.width.equalTo(50)
         }
         let url = URL(string: friendsArray[indexPath.row].profileImageUrl!)
-        URLSession.shared.dataTask(with: url!) { (data, res, err) in
-            DispatchQueue.main.async {
-                profileImageView.image = UIImage(data: data!)
-                profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
-                profileImageView.clipsToBounds = true
-            }
-        }.resume()
+        profileImageView.layer.cornerRadius = 50 / 2
+        profileImageView.clipsToBounds = true
+        profileImageView.kf.setImage(with: url)
         
         // 성명 레이블 구성
         let nameLabel = cell.userNameLabel!

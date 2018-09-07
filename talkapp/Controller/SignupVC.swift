@@ -18,6 +18,7 @@ class SignupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var addImageView: UIImageView!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     
     // Variables
     let remoteConfig = RemoteConfig.remoteConfig()
@@ -48,6 +49,28 @@ class SignupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
         signupButton.addTarget(self, action: #selector(signupEvent), for: .touchUpInside)
         cancelButton.addTarget(self, action: #selector(cancelEvent), for: .touchUpInside)
         
+        // 다른 곳 누르면 키보드 숨기기 처리
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
+        
+    }
+    
+    // 포커스에 따른 키보드 위치조정
+    override func viewWillAppear(_ animated: Bool) {
+        // 키보드 통제 옵저버 생성
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+    }
+    @objc func keyboardWillShow(notification: Notification){
+        if let keyboardSize = (notification.userInfo![UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            self.bottomConstraint.constant = keyboardSize.height + 16
+        }
+    }
+    @objc func keyboardWillHide(notification: Notification){
+        self.bottomConstraint.constant = 103
     }
 
     
@@ -62,6 +85,10 @@ class SignupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
             
             if ((result?.user) != nil) {
                 let uid = result?.user.uid
+                
+                // 유저이름 저장 (커밋하면 서버로 바로 저장됨)
+                result?.user.createProfileChangeRequest().displayName = self.nameTextField.text!
+                result?.user.createProfileChangeRequest().commitChanges(completion: nil)
                 
                 // 이미지정보 획득 및 저장 (이미지 품질은 예제용 이미지가 크기 때문에 0.1로함, 교육내용은 old 버전임)
                 let profileImage = UIImageJPEGRepresentation(self.addImageView.image!, 0.1)
@@ -103,6 +130,11 @@ class SignupVC: UIViewController, UINavigationControllerDelegate, UIImagePickerC
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         addImageView.image = info[UIImagePickerControllerOriginalImage] as! UIImage
         dismiss(animated: true, completion: nil)
+    }
+    
+    // 키보드 숨기기 처리로직
+    @objc func dismissKeyboard(){
+        self.view.endEditing(true)
     }
 
 }

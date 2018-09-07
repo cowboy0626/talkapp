@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import Kingfisher
 
 class ChatRoomVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -77,13 +78,9 @@ class ChatRoomVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             // 프로필 이미지 다운로드 및 정보맵핑하기
             cell.chatRoomNameLabel.text = userModel.userName
             let url = URL(string: userModel.profileImageUrl!)
-            URLSession.shared.dataTask(with: url!, completionHandler: { (data, res, err) in
-                DispatchQueue.main.async {
-                    cell.profileImageView.image = UIImage(data: data!)
-                    cell.profileImageView.layer.cornerRadius = (cell.profileImageView?.frame.width)! / 2
-                    cell.profileImageView.layer.masksToBounds = true
-                }
-            }).resume()
+            cell.profileImageView.layer.cornerRadius = 50 / 2
+            cell.profileImageView.layer.masksToBounds = true
+            cell.profileImageView.kf.setImage(with: url)
             
             let lastMessageKey = self.chatRooms[indexPath.row].comments.keys.sorted(){$0>$1} // 오름차순, 내림차순은 $0<$1
             cell.lastMessageLabel.text = self.chatRooms[indexPath.row].comments[lastMessageKey[0]]?.message

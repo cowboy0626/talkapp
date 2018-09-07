@@ -17,10 +17,12 @@
 		0B2EBB34210D717F00C4E411 /* talkappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2EBB33210D717F00C4E411 /* talkappTests.swift */; };
 		0B2EBB3F210D717F00C4E411 /* talkappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2EBB3E210D717F00C4E411 /* talkappUITests.swift */; };
 		0B2EBB4D210D741C00C4E411 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B2EBB4C210D741C00C4E411 /* GoogleService-Info.plist */; };
+		0B3418AE21401C020058A8DD /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3418AD21401C020058A8DD /* NotificationModel.swift */; };
 		0B3872992119FA2200B7B9AA /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B3872982119FA2200B7B9AA /* RemoteConfigDefaults.plist */; };
 		0B38729B211A047000B7B9AA /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B38729A211A047000B7B9AA /* LoginVC.swift */; };
 		0B39E921213D7EC1001B7C34 /* ChatRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B39E920213D7EC1001B7C34 /* ChatRoomVC.swift */; };
 		0B67F5D8211B20E10072275F /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B67F5D7211B20E00072275F /* SignupVC.swift */; };
+		0B6F60C22142EE6D0078EDED /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6F60C12142EE6D0078EDED /* AccountVC.swift */; };
 		0B709A0B2130D56800F3A837 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B709A0A2130D56800F3A837 /* UserModel.swift */; };
 		0B709A0D2131131200F3A837 /* PeopleListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B709A0C2131131200F3A837 /* PeopleListVC.swift */; };
 		5504CED9DFE3A1A43E16BDD7 /* Pods_talkapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E4A8BFD187E56B63B40DCE /* Pods_talkapp.framework */; };
@@ -62,10 +64,13 @@
 		0B2EBB3E210D717F00C4E411 /* talkappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = talkappUITests.swift; sourceTree = "<group>"; };
 		0B2EBB40210D717F00C4E411 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B2EBB4C210D741C00C4E411 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0B3418AD21401C020058A8DD /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		0B3872982119FA2200B7B9AA /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		0B38729A211A047000B7B9AA /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		0B39E920213D7EC1001B7C34 /* ChatRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomVC.swift; sourceTree = "<group>"; };
 		0B67F5D7211B20E00072275F /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
+		0B686F82213ECC2D004977DE /* talkapp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = talkapp.entitlements; sourceTree = "<group>"; };
+		0B6F60C12142EE6D0078EDED /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		0B709A0A2130D56800F3A837 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		0B709A0C2131131200F3A837 /* PeopleListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListVC.swift; sourceTree = "<group>"; };
 		21E45E1270F574E9AB378B89 /* Pods-talkappUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-talkappUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-talkappUITests/Pods-talkappUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +137,7 @@
 		0B2EBB1D210D717E00C4E411 /* talkapp */ = {
 			isa = PBXGroup;
 			children = (
+				0B686F82213ECC2D004977DE /* talkapp.entitlements */,
 				0B2EBB1E210D717E00C4E411 /* AppDelegate.swift */,
 				0B2EBB20210D717E00C4E411 /* ViewController.swift */,
 				0B709A092130D51800F3A837 /* Model */,
@@ -171,6 +177,7 @@
 				0B0BD999213444040010CE6A /* ChatVC.swift */,
 				0B38729A211A047000B7B9AA /* LoginVC.swift */,
 				0B709A0C2131131200F3A837 /* PeopleListVC.swift */,
+				0B6F60C12142EE6D0078EDED /* AccountVC.swift */,
 				0B39E920213D7EC1001B7C34 /* ChatRoomVC.swift */,
 			);
 			path = Controller;
@@ -180,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				0B709A0A2130D56800F3A837 /* UserModel.swift */,
+				0B3418AD21401C020058A8DD /* NotificationModel.swift */,
 				0B0BD99B2134497C0010CE6A /* ChatModel.swift */,
 			);
 			path = Model;
@@ -285,6 +293,17 @@
 				TargetAttributes = {
 					0B2EBB1A210D717E00C4E411 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.ClassKit = {
+								enabled = 0;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					0B2EBB2E210D717F00C4E411 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -464,8 +483,10 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-talkapp/Pods-talkapp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -475,8 +496,10 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -514,6 +537,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B6F60C22142EE6D0078EDED /* AccountVC.swift in Sources */,
 				0B67F5D8211B20E10072275F /* SignupVC.swift in Sources */,
 				0B0BD99A213444040010CE6A /* ChatVC.swift in Sources */,
 				0B2EBB21210D717E00C4E411 /* ViewController.swift in Sources */,
@@ -522,6 +546,7 @@
 				0B709A0B2130D56800F3A837 /* UserModel.swift in Sources */,
 				0B38729B211A047000B7B9AA /* LoginVC.swift in Sources */,
 				0B39E921213D7EC1001B7C34 /* ChatRoomVC.swift in Sources */,
+				0B3418AE21401C020058A8DD /* NotificationModel.swift in Sources */,
 				0B709A0D2131131200F3A837 /* PeopleListVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -696,6 +721,7 @@
 			baseConfigurationReference = FF08D3A5896DAB6D2A22A5CE /* Pods-talkapp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = talkapp/talkapp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J82B469879;
 				INFOPLIST_FILE = talkapp/Info.plist;
@@ -715,6 +741,7 @@
 			baseConfigurationReference = A0267946CC382DC1950646B2 /* Pods-talkapp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = talkapp/talkapp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J82B469879;
 				INFOPLIST_FILE = talkapp/Info.plist;
