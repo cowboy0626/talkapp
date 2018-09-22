@@ -17,6 +17,9 @@ class UserModel: NSObject {
     var uid: String?
     
     // Push서비스관련
-    var pushToken: String? 
+    var pushToken: String?
+    
+    // Comment 관련
+    var comment: String? 
 
 }

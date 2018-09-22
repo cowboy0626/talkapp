@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AccountVC: UIViewController {
 
@@ -32,6 +33,12 @@ class AccountVC: UIViewController {
         }
         alertController.addAction(UIAlertAction(title: "확인", style: .default, handler: { (action) in
             
+            // 상태메시지 입력필드 생성
+            if let textField = alertController.textFields?.first {
+                let dic = ["comment" : textField.text]
+                let uid = Auth.auth().currentUser?.uid
+                Database.database().reference().child("users").child(uid!).updateChildValues(dic)
+            }
         }))
         alertController.addAction(UIAlertAction(title: "취소", style: .cancel, handler: { (action) in
             

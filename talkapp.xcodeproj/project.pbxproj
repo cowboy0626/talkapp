@@ -173,12 +173,12 @@
 		0B709A062130C96600F3A837 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0B38729A211A047000B7B9AA /* LoginVC.swift */,
 				0B67F5D7211B20E00072275F /* SignupVC.swift */,
 				0B0BD999213444040010CE6A /* ChatVC.swift */,
-				0B38729A211A047000B7B9AA /* LoginVC.swift */,
 				0B709A0C2131131200F3A837 /* PeopleListVC.swift */,
-				0B6F60C12142EE6D0078EDED /* AccountVC.swift */,
 				0B39E920213D7EC1001B7C34 /* ChatRoomVC.swift */,
+				0B6F60C12142EE6D0078EDED /* AccountVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

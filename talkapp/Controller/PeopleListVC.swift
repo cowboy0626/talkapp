@@ -101,6 +101,16 @@ class PeopleListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         }
         nameLabel.text = friendsArray[indexPath.row].userName
         
+        // 상태메시지 레이블 구성
+        let commentLabel = cell.commentLabel!
+        commentLabel.snp.makeConstraints { (m) in
+            m.centerY.equalTo(cell)
+            m.right.equalTo(cell)
+        }
+        if let comment = friendsArray[indexPath.row].comment { // 코멘트는 없을 수도 있기 때문에 
+            commentLabel.text = comment
+        }
+        
         return cell
         
     }
@@ -131,11 +141,13 @@ class PeopleCell: UITableViewCell {
     
     var profileImageView: UIImageView! = UIImageView()
     var userNameLabel: UILabel! = UILabel()
+    var commentLabel: UILabel! = UILabel()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.addSubview(profileImageView)
         self.addSubview(userNameLabel)
+        self.addSubview(commentLabel)
     }
     
     required init?(coder aDecoder: NSCoder) {
