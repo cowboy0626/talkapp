@@ -33,7 +33,12 @@ class LoginVC: UIViewController {
         self.view.addSubview(statusBar)
         statusBar.snp.makeConstraints { (maker) in
             maker.right.top.left.equalTo(self.view)
-            maker.height.equalTo(20)
+            // 아이폰X일 경우
+            if (UIScreen.main.nativeBounds.height == 2436){
+                maker.height.equalTo(40)
+            } else {
+                maker.height.equalTo(20)
+            }
         }
         
         // 원격에서 스타일가져오기

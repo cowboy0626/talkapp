@@ -27,6 +27,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var comments: [ChatModel.Comment] = []
     var databaseRef: DatabaseReference?
     var observe: UInt? // 데이터베이스를 한번만 읽어오게 하기 위한 환경변수
+    var peopleCount: Int? // 미조회 인원 정보를 계속읽지 않고 한번만 읽도록 하기
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -166,6 +167,36 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    // 읽지 않은 사람수 표시하기
+    func setReadCount(label: UILabel? , position: Int?){
+        let readCount = self.comments[position!].readUsers.count
+        
+        // 최초 조회 시
+        if peopleCount == nil {
+            
+            Database.database().reference().child("chatrooms").child(chatRoomId!).child("users").observeSingleEvent(of: .value) { (snapshot) in
+                let dic = snapshot.value as! [String:Any]
+                self.peopleCount = dic.count
+                let noReadCount = self.peopleCount! - readCount
+                if noReadCount > 0 {
+                    label?.isHidden = false
+                    label?.text = String(noReadCount)
+                } else {
+                    label?.isHidden = true
+                }
+            }
+        } else {
+            // 이미 한번 조회한 경우
+            let noReadCount = self.peopleCount! - readCount
+            if noReadCount > 0 {
+                label?.isHidden = false
+                label?.text = String(noReadCount)
+            } else {
+                label?.isHidden = true
+            }
+        }
+    }
+    
     // 메시지 가져오기
     func getMessageList(){
         
@@ -184,21 +215,29 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             // 목록 가져오기
             for item in dataSnapshot.children.allObjects as! [DataSnapshot] {
                 let key = item.key as String
-                let comment = ChatModel.Comment(JSON: item.value as! [String:AnyObject])
+                let comment = ChatModel.Comment(JSON: item.value as! [String:AnyObject]) // 화면에 표시용
+                let commentModify = ChatModel.Comment(JSON: item.value as! [String:AnyObject]) // 서버로 읽은이 정보 전달용
                 
                 // 읽은이 정보 저장
-                comment?.readUsers[self.uid!] = true
-                readUserDic[key] = comment?.toJSON() as! NSDictionary
+                commentModify?.readUsers[self.uid!] = true
+                readUserDic[key] = commentModify?.toJSON() as! NSDictionary
                 
                 self.comments.append(comment!)
                 
             }
             
             let nsDic = readUserDic as NSDictionary
-            dataSnapshot.ref.updateChildValues(nsDic as! [AnyHashable : Any], withCompletionBlock: { (err, ref) in
+            
+            if (!(self.comments.last?.readUsers.keys.contains(self.uid!))!){
+                // 읽은이 정보가 없을 경우에만 서버 읽은이 정보 데이터에 업데이트 하고 그렇지 않으면 그냥 데이터만 표시함
+                dataSnapshot.ref.updateChildValues(nsDic as! [AnyHashable : Any], withCompletionBlock: { (err, ref) in
+                    self.messageTableView.reloadData()
+                    self.scrollMessage()
+                })
+            } else {
                 self.messageTableView.reloadData()
                 self.scrollMessage()
-            })
+            }
         })
     }
     
@@ -216,6 +255,8 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             if let regTime = self.comments[indexPath.row].timeStamp {
                 cell.timeStampLabel.text = regTime.todayTime
             }
+            // 읽지 않은 인원수 표시
+            self.setReadCount(label: cell.readCountLabel, position: indexPath.row)
             return cell
         } else {
             let cell = messageTableView.dequeueReusableCell(withIdentifier: "TargetMessageCell", for: indexPath) as! TargetMessageCell
@@ -235,6 +276,8 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             if let regTime = self.comments[indexPath.row].timeStamp {
                 cell.timeStampLabel.text = regTime.todayTime
             }
+            // 읽지 않은 인원수 표시
+            self.setReadCount(label: cell.readCountLabel, position: indexPath.row)
             return cell
         }
     }
@@ -294,6 +337,7 @@ extension Int {
 class MyMessageCell: UITableViewCell {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var timeStampLabel: UILabel!
+    @IBOutlet weak var readCountLabel: UILabel!
     
 }
 
@@ -302,5 +346,6 @@ class TargetMessageCell: UITableViewCell{
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var timeStampLabel: UILabel!
+    @IBOutlet weak var readCountLabel: UILabel!
     
 }

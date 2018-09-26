@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -426,6 +427,12 @@
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pk9-Az-cxW">
+                                                    <rect key="frame" x="268.5" y="27.5" width="12.5" height="13.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" name="Primary200"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="7Oh-nx-qgU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ciR-hs-LfQ" secondAttribute="leadingMargin" constant="65" id="5qt-VW-hTj"/>
@@ -434,7 +441,9 @@
                                                 <constraint firstItem="kRS-fx-UC3" firstAttribute="leading" secondItem="7Oh-nx-qgU" secondAttribute="leading" constant="-10" id="aEU-wD-E5s"/>
                                                 <constraint firstItem="kRS-fx-UC3" firstAttribute="trailing" secondItem="7Oh-nx-qgU" secondAttribute="trailing" constant="10" id="blc-8s-rNa"/>
                                                 <constraint firstItem="7Oh-nx-qgU" firstAttribute="trailing" secondItem="ciR-hs-LfQ" secondAttribute="trailingMargin" id="fiS-xE-Tfx"/>
+                                                <constraint firstItem="IYE-dX-RJQ" firstAttribute="leading" secondItem="Pk9-Az-cxW" secondAttribute="trailing" constant="-14" id="lDF-3z-fkt"/>
                                                 <constraint firstItem="kRS-fx-UC3" firstAttribute="top" secondItem="7Oh-nx-qgU" secondAttribute="top" constant="-10" id="nPR-dm-KZS"/>
+                                                <constraint firstItem="Pk9-Az-cxW" firstAttribute="centerY" secondItem="IYE-dX-RJQ" secondAttribute="centerY" id="wG4-pY-u26"/>
                                                 <constraint firstAttribute="bottom" secondItem="IYE-dX-RJQ" secondAttribute="bottom" constant="4" id="wyQ-ap-I5G"/>
                                                 <constraint firstItem="IYE-dX-RJQ" firstAttribute="top" secondItem="7Oh-nx-qgU" secondAttribute="bottom" constant="16" id="xoa-ns-tIW"/>
                                                 <constraint firstItem="kRS-fx-UC3" firstAttribute="bottom" secondItem="7Oh-nx-qgU" secondAttribute="bottom" constant="10" id="yxa-o3-WFQ"/>
@@ -442,6 +451,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="messageLabel" destination="7Oh-nx-qgU" id="evp-ai-574"/>
+                                            <outlet property="readCountLabel" destination="Pk9-Az-cxW" id="zUs-de-qkX"/>
                                             <outlet property="timeStampLabel" destination="IYE-dX-RJQ" id="bQG-r9-Lza"/>
                                         </connections>
                                     </tableViewCell>
@@ -487,16 +497,24 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i9E-8Y-ox8">
+                                                    <rect key="frame" x="129" y="27.5" width="12.5" height="13.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" name="Primary200"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Eth-Z3-rBV" firstAttribute="leading" secondItem="2Jc-nm-Tj2" secondAttribute="leading" constant="44" id="2Le-L4-WKu"/>
                                                 <constraint firstItem="Bcd-ZZ-Kzd" firstAttribute="top" secondItem="2Jc-nm-Tj2" secondAttribute="topMargin" id="3xh-MZ-UGN"/>
                                                 <constraint firstItem="smm-CX-6yu" firstAttribute="top" secondItem="Bcd-ZZ-Kzd" secondAttribute="top" constant="-10" id="6Sp-Ds-THC"/>
                                                 <constraint firstItem="smm-CX-6yu" firstAttribute="bottom" secondItem="Bcd-ZZ-Kzd" secondAttribute="bottom" constant="5" id="74u-sK-ejQ"/>
+                                                <constraint firstItem="i9E-8Y-ox8" firstAttribute="centerY" secondItem="Eth-Z3-rBV" secondAttribute="centerY" id="9cs-hx-RVt"/>
                                                 <constraint firstItem="gAn-yb-pb9" firstAttribute="top" secondItem="JSJ-no-YHS" secondAttribute="bottom" constant="4" id="Gp7-Ik-DxF"/>
                                                 <constraint firstItem="JSJ-no-YHS" firstAttribute="leading" secondItem="2Jc-nm-Tj2" secondAttribute="leading" constant="8" id="HU9-E4-nMO"/>
                                                 <constraint firstItem="Bcd-ZZ-Kzd" firstAttribute="leading" secondItem="2Jc-nm-Tj2" secondAttribute="leadingMargin" constant="30" id="IEP-fx-6wE"/>
                                                 <constraint firstAttribute="bottom" secondItem="Eth-Z3-rBV" secondAttribute="bottom" constant="4" id="R2R-aW-rVr"/>
+                                                <constraint firstItem="i9E-8Y-ox8" firstAttribute="leading" secondItem="Eth-Z3-rBV" secondAttribute="trailing" constant="-15" id="SFo-Hp-35Z"/>
                                                 <constraint firstItem="gAn-yb-pb9" firstAttribute="centerX" secondItem="JSJ-no-YHS" secondAttribute="centerX" id="eMU-ZJ-hJY"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Bcd-ZZ-Kzd" secondAttribute="trailing" constant="65" id="iGW-4h-zaS"/>
                                                 <constraint firstItem="JSJ-no-YHS" firstAttribute="top" secondItem="2Jc-nm-Tj2" secondAttribute="top" id="l4X-ow-p2c"/>
@@ -508,6 +526,7 @@
                                         <connections>
                                             <outlet property="messageLabel" destination="Bcd-ZZ-Kzd" id="PSh-Zg-ydG"/>
                                             <outlet property="profileImageView" destination="JSJ-no-YHS" id="LNf-uU-w1s"/>
+                                            <outlet property="readCountLabel" destination="i9E-8Y-ox8" id="SGV-0W-sr5"/>
                                             <outlet property="timeStampLabel" destination="Eth-Z3-rBV" id="W67-Im-Ad6"/>
                                             <outlet property="userNameLabel" destination="gAn-yb-pb9" id="pIR-QU-bWd"/>
                                         </connections>
@@ -591,5 +610,11 @@
         <image name="loading-icon" width="512" height="512"/>
         <image name="message_blue" width="11" height="9"/>
         <image name="message_gray" width="12" height="8"/>
+        <namedColor name="Primary200">
+            <color red="0.024000000210000001" green="0.77600002290000003" blue="0.85900002720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Primary200">
+            <color red="0.024000000210000001" green="0.77600002290000003" blue="0.85900002720000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
