@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.7.3)
+  - BEMCheckBox (1.4.1)
   - Firebase/Auth (5.4.1):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.0.2)
@@ -73,6 +74,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - BEMCheckBox
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -86,6 +88,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  BEMCheckBox: 5ba6e37ade3d3657b36caecc35c8b75c6c2b1a4e
   Firebase: 355bd535bfdacaa82a7fe8d9784115edefd6fc03
   FirebaseABTesting: 1f50b8d50f5e3469eea54e7463a7b7fe221d1f5e
   FirebaseAnalytics: b3628aea54c50464c32c393fb2ea032566e7ecc2
@@ -106,6 +109,6 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   TextFieldEffects: 4ee41b5216e674d55fb6ac25107bf1af7629176f
 
-PODFILE CHECKSUM: 0645e30103a3880e3b8b35fc9a5d94ba8cc2ceb4
+PODFILE CHECKSUM: fe11b265ca9cab1be5bb49d9ccba4304ac6678be
 
 COCOAPODS: 1.4.0

@@ -65,6 +65,23 @@ class PeopleListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             }
         }
         
+        // 친구선택버튼 만들기
+        var selectFriendButton = UIButton()
+        view.addSubview(selectFriendButton)
+        selectFriendButton.snp.makeConstraints { (m) in
+            m.bottom.equalTo(view).offset(-90)
+            m.right.equalTo(view).offset(-20)
+            m.width.height.equalTo(50)
+        }
+        selectFriendButton.backgroundColor = UIColor.black
+        selectFriendButton.layer.cornerRadius = 25
+        selectFriendButton.layer.masksToBounds = true
+        selectFriendButton.addTarget(self, action: #selector(showSelectedFriendVC), for: .touchUpInside)
+    }
+    
+    // 친구선택화면 이동
+    @objc func showSelectedFriendVC(){
+        self.performSegue(withIdentifier: "SelectFriendSeque", sender: nil)
     }
     
     override func didReceiveMemoryWarning() {

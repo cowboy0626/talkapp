@@ -20,6 +20,7 @@
 		0B3418AE21401C020058A8DD /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3418AD21401C020058A8DD /* NotificationModel.swift */; };
 		0B3872992119FA2200B7B9AA /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B3872982119FA2200B7B9AA /* RemoteConfigDefaults.plist */; };
 		0B38729B211A047000B7B9AA /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B38729A211A047000B7B9AA /* LoginVC.swift */; };
+		0B38DC6D215BB7CC0026284A /* SelectedFriendVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B38DC6C215BB7CB0026284A /* SelectedFriendVC.swift */; };
 		0B39E921213D7EC1001B7C34 /* ChatRoomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B39E920213D7EC1001B7C34 /* ChatRoomVC.swift */; };
 		0B67F5D8211B20E10072275F /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B67F5D7211B20E00072275F /* SignupVC.swift */; };
 		0B6F60C22142EE6D0078EDED /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6F60C12142EE6D0078EDED /* AccountVC.swift */; };
@@ -67,6 +68,8 @@
 		0B3418AD21401C020058A8DD /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		0B3872982119FA2200B7B9AA /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
 		0B38729A211A047000B7B9AA /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		0B38DC6B215BB5690026284A /* BEMCheckBox.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BEMCheckBox.h; sourceTree = "<group>"; };
+		0B38DC6C215BB7CB0026284A /* SelectedFriendVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedFriendVC.swift; sourceTree = "<group>"; };
 		0B39E920213D7EC1001B7C34 /* ChatRoomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomVC.swift; sourceTree = "<group>"; };
 		0B67F5D7211B20E00072275F /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		0B686F82213ECC2D004977DE /* talkapp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = talkapp.entitlements; sourceTree = "<group>"; };
@@ -148,6 +151,7 @@
 				0B2EBB2A210D717F00C4E411 /* Info.plist */,
 				0B2EBB4C210D741C00C4E411 /* GoogleService-Info.plist */,
 				0B3872982119FA2200B7B9AA /* RemoteConfigDefaults.plist */,
+				0B38DC6B215BB5690026284A /* BEMCheckBox.h */,
 			);
 			path = talkapp;
 			sourceTree = "<group>";
@@ -178,6 +182,7 @@
 				0B0BD999213444040010CE6A /* ChatVC.swift */,
 				0B709A0C2131131200F3A837 /* PeopleListVC.swift */,
 				0B39E920213D7EC1001B7C34 /* ChatRoomVC.swift */,
+				0B38DC6C215BB7CB0026284A /* SelectedFriendVC.swift */,
 				0B6F60C12142EE6D0078EDED /* AccountVC.swift */,
 			);
 			path = Controller;
@@ -484,6 +489,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-talkapp/Pods-talkapp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BEMCheckBox/BEMCheckBox.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -497,6 +503,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BEMCheckBox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
@@ -544,6 +551,7 @@
 				0B0BD99C2134497C0010CE6A /* ChatModel.swift in Sources */,
 				0B2EBB1F210D717E00C4E411 /* AppDelegate.swift in Sources */,
 				0B709A0B2130D56800F3A837 /* UserModel.swift in Sources */,
+				0B38DC6D215BB7CC0026284A /* SelectedFriendVC.swift in Sources */,
 				0B38729B211A047000B7B9AA /* LoginVC.swift in Sources */,
 				0B39E921213D7EC1001B7C34 /* ChatRoomVC.swift in Sources */,
 				0B3418AE21401C020058A8DD /* NotificationModel.swift in Sources */,
@@ -731,6 +739,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.cookieapps.talkapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = talkapp/BEMCheckBox.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -751,6 +760,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = kr.cookieapps.talkapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = talkapp/BEMCheckBox.h;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

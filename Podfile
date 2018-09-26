@@ -15,6 +15,7 @@ target 'talkapp' do
   pod 'ObjectMapper'
   pod 'Alamofire'
   pod 'Kingfisher'
+  pod 'BEMCheckBox'
   #
 
   # Pods for talkapp
