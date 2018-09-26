@@ -29,6 +29,7 @@ class ChatModel: Mappable {
     public class Comment: Mappable {
         public var uid: String?
         public var message: String?
+        public var readUsers: Dictionary<String, Bool> = [:]
         public var timeStamp: Int?
         public required init?(map: Map) {
             
@@ -37,6 +38,7 @@ class ChatModel: Mappable {
             uid <- map["uid"]
             message <- map["message"]
             timeStamp <- map["time-stamp"]
+            readUsers <- map["readUsers"]
         }
     }
     

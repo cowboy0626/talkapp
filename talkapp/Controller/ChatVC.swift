@@ -25,6 +25,8 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     public var targetUid: String? // 채팅대상ID
     var targetModel: UserModel? // 채팅대상정보 저장용 모델
     var comments: [ChatModel.Comment] = []
+    var databaseRef: DatabaseReference?
+    var observe: UInt? // 데이터베이스를 한번만 읽어오게 하기 위한 환경변수
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +53,8 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         NotificationCenter.default.removeObserver(self)
         // 탭바 보이기
         self.tabBarController?.tabBar.isHidden = false
+        // DB옵저버 삭제처리
+        self.databaseRef?.removeObserver(withHandle: observe!)
     }
     
     // 키보드 통제옵저버
@@ -164,18 +168,38 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     // 메시지 가져오기
     func getMessageList(){
-        Database.database().reference().child("chatrooms").child(self.chatRoomId!).child("comments").observe(DataEventType.value) { (dataSnapshot) in
+        
+        // 리스너 (observe)와 DBref를 분리한 후 화면을 닫으면 (viewWillDisappear) Observe를 종료함
+        databaseRef = Database.database().reference().child("chatrooms").child(self.chatRoomId!).child("comments")
+        observe = databaseRef?.observe(.value, with: { (dataSnapshot) in
+
+        //Database.database().reference().child("chatrooms").child(self.chatRoomId!).child("comments").observe(DataEventType.value) { (dataSnapshot) in
+            
             // 목록 초기화
             self.comments.removeAll()
             
+            // 읽은이 정보가져오기
+            var readUserDic: Dictionary<String,AnyObject> = [:]
+            
             // 목록 가져오기
             for item in dataSnapshot.children.allObjects as! [DataSnapshot] {
+                let key = item.key as String
                 let comment = ChatModel.Comment(JSON: item.value as! [String:AnyObject])
+                
+                // 읽은이 정보 저장
+                comment?.readUsers[self.uid!] = true
+                readUserDic[key] = comment?.toJSON() as! NSDictionary
+                
                 self.comments.append(comment!)
+                
             }
-            self.messageTableView.reloadData()
-            self.scrollMessage()
-        }
+            
+            let nsDic = readUserDic as NSDictionary
+            dataSnapshot.ref.updateChildValues(nsDic as! [AnyHashable : Any], withCompletionBlock: { (err, ref) in
+                self.messageTableView.reloadData()
+                self.scrollMessage()
+            })
+        })
     }
     
     // 테이블 그리기 프로토콜 구현
